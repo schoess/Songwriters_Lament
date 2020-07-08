@@ -39,6 +39,13 @@ module.exports = function(sequelize, DataTypes) {
       validate: {
         notEmpty: true
       }
+    },
+    artistID: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: "artists",
+        key: "id"
+      }
     }
   });
 
