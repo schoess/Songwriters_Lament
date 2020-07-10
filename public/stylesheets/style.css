@@ -5,6 +5,11 @@
   font-family: 'Lobster', cursive;
 }
 
+<<<<<<< HEAD
+.fontLobster {
+  font-family: 'Lobster', cursive;
+}
+=======
 #SL{
  padding-right: 5px;
  font-weight: bold;
@@ -68,3 +73,4 @@
   text-decoration: none;
   cursor: pointer;
 }
+>>>>>>> cd719992ac6fb288781b9c319c8943d26f2ff134
