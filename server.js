@@ -24,9 +24,10 @@ app.use(passport.session());
 // require("./routes/html-routes.js")(app);
 // require("./routes/api-routes.js")(app);
 
-const routes = require("./controllers/songsController.js");
+require("./controllers/songsController.js")(app);
+require("./controllers/html-routes.js")(app);
 
-app.use(routes);
+// app.use(routes);
 
 // Syncing our database and logging a message to the user upon success
 db.sequelize.sync().then(() => {
