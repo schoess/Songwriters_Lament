@@ -25,7 +25,7 @@ $(() => {
     // div col-sm-3
     const divColSm = $("<div class='col-sm-3' id='" + id + "'>");
 
-    const divCardBg = $("<div class='card bg-warning'>");
+    const divCardBg = $("<div class='card bg-secondary'>");
 
     const divCardBody = $("<div class='card-body'>");
 
