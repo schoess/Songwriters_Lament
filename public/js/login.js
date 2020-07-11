@@ -21,7 +21,7 @@ $(document).ready(() => {
   });
   // loginUser does a post to our "api/signup" route and if successful, redirects us the the members page
   function loginUser(username) {
-    $.post("/api/signup", {
+    $.post("/api/login", {
       artistName: username
     })
       .then(() => {
