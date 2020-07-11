@@ -68,3 +68,12 @@
     text-decoration: none;
     cursor: pointer;
   }
+
+  #lyricsBody {
+    margin-top: 5%;
+  }
+
+  .searchBar {
+    margin-top: 3.2%;
+    box-shadow: 10px 10px 2px rgba(0, 0, 0, 0.25);
+  }
