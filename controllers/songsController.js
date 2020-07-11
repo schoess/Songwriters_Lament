@@ -1,6 +1,7 @@
 // Requiring our models and passport as we've configured it
 const db = require("../models");
 const passport = require("../config/passport");
+const router = express.Router();
 
 // const router = express.Router();
 
@@ -52,13 +53,12 @@ module.exports = function(app) {
 
   // Storing lyrics to the DB
   app.post("/api/store_lyrics", (req,res) => {
-    let string = "me and only me";
     db.Song.create ({
       title: req.body.title,
       genre: req.body.genre,
       lyrics: req.body.lyrics,
-      inspiration: string,
-      notes: "mamma mia",
+      inspiration: req.body.inspiration,
+      notes: req.body.notes,
 
     });
   });
@@ -90,8 +90,8 @@ module.exports = function(app) {
       title: req.body.title,
       genre: req.body.genre,
       lyrics: req.body.lyrics,
-      inspiration: "me and only me",
-      notes: "mamma mia",
+      inspiration: req.body.inspiration,
+      notes: req.body.notes,
     }, {
       where: {
         id: req.body.id

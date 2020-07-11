@@ -13,7 +13,7 @@
     <!-- Font -->
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
     <!-- CSS  -->
-    <link rel="stylesheet" href="./public/stylesheets/style.css">
+    <link rel="stylesheet" href="./stylesheets/style.css">
 
     <!-- Javascript -->
     <script type="text/javascript" src="./js/dashboardEx.js"></script>
@@ -35,13 +35,18 @@
         <div class="col-sm-8">
             
             <div class="row" id="lyricsBody">
+                <!-- Testing-->
+                <span class="songs-container"></span>
+                <!-- Testing -->
                 <form class="newLyrics">
                     <div class="form-group">
                     <label for="username">Create Song</label>
                     </br>
                     <input class="songTitle" type="text" placeholder="Song Title">
                     <input class="genre" type="text" placeholder="Genre">
-                    <textarea type="lyric" class="form-control" id="lyric-input" placeholder="Lyrics" rows="30"></textarea>
+                    <textarea type="lyric" class="form-control" id="lyric-input" placeholder="Lyrics..." rows="8"></textarea>
+                    <textarea type="inspiration" class="form-control" id="inspiration-input" placeholder="Inspirations..." rows="2"></textarea>
+                    <textarea type="notes" class="form-control" id="notes-input" placeholder="Notes..." rows="4"></textarea>
                     </div>
                     <button type="submit" class="btn btn-danger newLyrics">Create</button>
                 <div class="col-sm-3">
