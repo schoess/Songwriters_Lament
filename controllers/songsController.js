@@ -49,4 +49,59 @@ module.exports = function(app) {
       });
     }
   });
+
+  // Storing lyrics to the DB
+  app.post("/api/store_lyrics", (req,res) => {
+    let string = "me and only me";
+    db.Song.create ({
+      title: req.body.title,
+      genre: req.body.genre,
+      lyrics: req.body.lyrics,
+      inspiration: string,
+      notes: "mamma mia",
+
+    });
+  });
+
+  // Gets all lyrics
+
+  app.get("/api/get_lyrics", (req,res) => {
+    db.Song.findAll({}).then(function(dbSongs) {
+      res.json(dbSongs);
+    });
+  });
+ 
+  //Deletes lyrics
+
+  app.delete("/api/lyric/:id", function(req,res) {
+    db.Song.destroy({
+      where: {
+        id: req.params.id
+      }
+    }).then(function(dbSong) {
+      res.json(dbSong);
+    });
+  });
+
+  //Updates Lyrics
+
+  app.put("/api/update_lyric", function(req,res) {
+    db.Song.update({
+      title: req.body.title,
+      genre: req.body.genre,
+      lyrics: req.body.lyrics,
+      inspiration: "me and only me",
+      notes: "mamma mia",
+    }, {
+      where: {
+        id: req.body.id
+      }
+    }).then(function(dbSong) {
+      res.json(dbSong);
+    })
+    .catch(function(err) {
+      res.json(err);
+    })
+  })
 };
+
