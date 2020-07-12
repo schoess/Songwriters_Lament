@@ -11,8 +11,9 @@ module.exports = function(app) {
   app.post("/api/login", passport.authenticate("local"), (req, res) => {
     // app.post("/api/login", (req, res) => {
     // Sending back a password, even a hashed password, isn't a good idea
-    console.log(req.body.artistName);
-    res.json(req.body.artistName);
+    console.log(req.artist);
+    // res.json(req.body.artistName);
+    res.json(req.artist);
   });
 
   // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
@@ -21,7 +22,8 @@ module.exports = function(app) {
   app.post("/api/signup", (req, res) => {
     console.log(req.body);
     db.Artist.create({
-      artistName: req.body.name
+      artistName: req.body.name,
+      password: req.body.password
     })
       .then(() => {
         res.redirect(307, "/api/login");
@@ -46,8 +48,8 @@ module.exports = function(app) {
       // Otherwise send back the user's email and id
       // Sending back a password, even a hashed password, isn't a good idea
       res.json({
-        email: req.user.email,
-        id: req.user.id
+        artistName: req.artist.name,
+        id: req.artist.id
       });
     }
   });
