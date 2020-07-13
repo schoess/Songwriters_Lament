@@ -7,18 +7,29 @@ const router = express.Router();
 // requiring js files in models
 const database = require("../models/song");
 
+router.get("/", function(req, res){
+  database.all(function (data){
+    let hbsObject = {
+      Song: data
+    };
+    console.log(hbsObject);
+    res.render("index", hbsObject);
+  });
+});
+
+
 
 module.exports = function(app) {
   /* Attempts at handlebars */
-  router.get("/", function(req, res){
-    database.all(function (data){
-      let hbsObject = {
-        Song: data
-      };
-      console.log(hbsObject);
-      res.render("index", hbsObject);
-    });
-  });
+  // router.get("/", function(req, res){
+  //   database.all(function (data){
+  //     let hbsObject = {
+  //       Song: data
+  //     };
+  //     console.log(hbsObject);
+  //     res.render("index", hbsObject);
+  //   });
+  // });
 
 
 
