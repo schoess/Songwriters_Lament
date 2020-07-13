@@ -36,4 +36,9 @@ $(document).ready(() => {
         console.log(err);
       });
   }
+  // loginUser does a post to our "api/signup" route and if successful, redirects us the the members page
+  function redirectToRegister() {
+    window.location.href = "/signup"
+  }
+  $("#registerButton").on("click", redirectToRegister)
 });
