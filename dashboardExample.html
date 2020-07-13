@@ -13,11 +13,11 @@
     <!-- Font -->
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
     <!-- CSS  -->
-    <link rel="stylesheet" href="./public/stylesheets/style.css">
+    <link rel="stylesheet" href="./stylesheets/style.css">
 
     <!-- Javascript -->
-    <script type="text/javascript" src="./public/js/dashboardEx.js"></script>
-    
+    <script type="text/javascript" src="./js/dashboardEx.js"></script>
+
 
 
 </head>
@@ -27,42 +27,32 @@
 <nav class="navbar navbar-light bg-success">
     <a class="navbar-brand fontLobster" href="#">Songwriter's Lament</a>
 </nav>
+
+
 <div class="container-fluid">
     <div class="row">
+        
         <div class="col-sm-8">
+            
             <div class="row" id="lyricsBody">
+                <!-- Testing-->
+                <span class="songs-container"></span>
+                <!-- Testing -->
+                <form class="newLyrics">
+                    <div class="form-group">
+                    <label for="username">Create Song</label>
+                    </br>
+                    <input class="songTitle" type="text" placeholder="Song Title">
+                    <input class="genre" type="text" placeholder="Genre">
+                    <textarea type="lyric" class="form-control" id="lyric-input" placeholder="Lyrics..." rows="8"></textarea>
+                    <textarea type="inspiration" class="form-control" id="inspiration-input" placeholder="Inspirations..." rows="2"></textarea>
+                    <textarea type="notes" class="form-control" id="notes-input" placeholder="Notes..." rows="4"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-danger newLyrics">Create</button>
                 <div class="col-sm-3">
-                    <div class="card bg-warning" id="0">
-                        <div class="card-body">
-                          This is some text within a card body.
-                          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                        </div>
-                    </div>
+                   
                 </div>
-        
-                <div class="col-sm-3" id="1">
-                    <div class="card bg-warning">
-                        <div class="card-body">
-                          This is some text within a card body.
-                        </div>
-                    </div>
-                </div>
-        
-                <div class="col-sm-3" id="2">
-                    <div class="card bg-warning">
-                        <div class="card-body">
-                          This is some text within a card body.
-                        </div>
-                    </div>
-                </div>
-        
-                <div class="col-sm-3">
-                    <div class="card bg-warning">
-                        <div class="card-body">
-                          This is some text within a card body.
-                        </div>
-                    </div>
-                </div>
+               
             </div>
         </div>
 
@@ -71,7 +61,7 @@
         <div class="col-sm-4">
             <div class="card bg-primary">
                 <div class="card-body">
-                      This is some text within a card body.
+                    <p class="card-text">This is some text within a card body.
                      
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nec dolor mollis, dignissim diam et, iaculis nibh. Pellentesque et cursus ante. Proin quis interdum magna. Nam ultricies sit amet nibh quis viverra. In commodo dolor at tincidunt maximus. Sed consectetur erat a neque placerat, non venenatis sapien maximus. Proin scelerisque sem id lacus finibus, sit amet vulputate urna pulvinar. Vestibulum ut orci pretium nulla commodo varius. Phasellus eget semper orci. Phasellus arcu arcu, porta vitae efficitur a, fringilla id lectus. Proin tincidunt, libero vitae blandit elementum, nisl odio aliquet tellus, eu vulputate nisi arcu eget lacus. Quisque ullamcorper eu ex eget blandit.
 
@@ -81,7 +71,7 @@ Phasellus convallis in erat eget mollis. Morbi eget efficitur metus. Mauris cons
 
 Cras porttitor fermentum augue, nec convallis ipsum auctor in. Morbi in ex cursus, lacinia ex ac, semper leo. Aliquam auctor id nulla mattis viverra. Vivamus pulvinar a tortor sed porttitor. Donec et convallis orci. Morbi pretium massa ut nisi luctus, sed venenatis metus facilisis. Proin lobortis orci eu porta convallis. Nullam ac volutpat mauris. Nam id massa et nisi ultrices convallis in quis lacus. Donec gravida sed turpis sit amet mollis. Maecenas dapibus, magna a venenatis cursus, tortor quam dignissim felis, eget commodo purus neque a libero. Donec in porttitor sapien, ac iaculis purus. Mauris maximus odio auctor porttitor porta.
 
-Morbi elementum dui arcu, vitae ultrices justo interdum ac. Integer at ullamcorper eros. Nam magna dolor, blandit ut lectus quis, lacinia fermentum sem. Mauris facilisis gravida diam eget dapibus. Morbi et nunc consequat, porttitor nibh sed, scelerisque arcu. Pellentesque rhoncus, risus ac suscipit congue, erat nibh venenatis libero, ut varius enim ante vel metus. Sed ornare est ut nisi luctus, eu vehicula ante ornare. Duis non justo eget ante rutrum pretium at a ante. Sed consectetur lectus non aliquam lobortis. Sed suscipit in dui vitae rutrum. Sed eu velit at sem efficitur dignissim.
+Morbi elementum dui arcu, vitae ultrices justo interdum ac. Integer at ullamcorper eros. Nam magna dolor, blandit ut lectus quis, lacinia fermentum sem. Mauris facilisis gravida diam eget dapibus. Morbi et nunc consequat, porttitor nibh sed, scelerisque arcu. Pellentesque rhoncus, risus ac suscipit congue, erat nibh venenatis libero, ut varius enim ante vel metus. Sed ornare est ut nisi luctus, eu vehicula ante ornare. Duis non justo eget ante rutrum pretium at a ante. Sed consectetur lectus non aliquam lobortis. Sed suscipit in dui vitae rutrum. Sed eu velit at sem efficitur dignissim.</p>
                 </div>
             </div>
             
