@@ -1,11 +1,27 @@
 // Requiring our models and passport as we've configured it
 const db = require("../models");
 const passport = require("../config/passport");
+// Handlebars requires
+const express = require("express");
 const router = express.Router();
+// requiring js files in models
+const database = require("../models/song");
 
-// const router = express.Router();
 
 module.exports = function(app) {
+  /* Attempts at handlebars */
+  router.get("/", function(req, res){
+    database.all(function (data){
+      let hbsObject = {
+        Song: data
+      };
+      console.log(hbsObject);
+      res.render("index", hbsObject);
+    });
+  });
+
+
+
   // Using the passport.authenticate middleware with our local strategy.
   // If the user has valid login credentials, send them to the members page.
   // Otherwise the user will be sent an error
