@@ -83,6 +83,7 @@ module.exports = function(app) {
       });
   });
 
+  // create new Lyrics
   app.post("/api/lyrics", (req, res) => {
     console.log(req.body[0]);
     db.Song.create({
