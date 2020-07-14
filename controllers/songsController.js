@@ -68,8 +68,12 @@ module.exports = function(app) {
   });
 
   // getting lyrics
-  app.get("/api/lyrics", (req, res) => {
-    db.Song.findAll({})
+  app.get("/api/lyrics/:id", (req, res) => {
+    db.Song.findAll({
+      where: {
+        ArtistId: req.params.id
+      }
+    })
       .then(dbSong => {
         console.log(dbSong);
         res.json(dbSong);
@@ -95,8 +99,6 @@ module.exports = function(app) {
       .catch(err => {
         res.status(401).json(err);
       });
-
-      // res.status("204").end();
   });
 
   // Search for songs from a specific artist then provides JSON
