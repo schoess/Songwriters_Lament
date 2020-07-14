@@ -141,11 +141,21 @@ $(() => {
     event.preventDefault();
 
     // getting the lyrics and putting them in variable
-    const songTitle = $(".songTitle").val().trim();
-    const genreText = $(".genre").val().trim();
-    const lyricsText = $("#lyric-input").val().trim();
-    const inspirationText = $("#inspiration-input").val().trim();
-    const noteText = $("#notes-input").val().trim();
+    const songTitle = $(".songTitle")
+      .val()
+      .trim();
+    const genreText = $(".genre")
+      .val()
+      .trim();
+    const lyricsText = $("#lyric-input")
+      .val()
+      .trim();
+    const inspirationText = $("#inspiration-input")
+      .val()
+      .trim();
+    const noteText = $("#notes-input")
+      .val()
+      .trim();
 
     // Storing it to the database
     //
