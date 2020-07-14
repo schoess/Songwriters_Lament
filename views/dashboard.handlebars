@@ -9,22 +9,52 @@
         
         <div class="col-sm-8">
             
-            <div class="row" id="lyricsBody">
+            <div class="row">
                 <!-- Testing-->
                 <span class="songs-container"></span>
                 <!-- Testing -->
-                <form class="newLyrics">
-                    <div class="form-group">
-                    <label for="username">Create Song</label>
-                    </br>
-                    <input class="songTitle" type="text" placeholder="Song Title">
-                    <input class="genre" type="text" placeholder="Genre">
-                    <textarea type="lyric" class="form-control" id="lyric-input" placeholder="Lyrics..." rows="8"></textarea>
-                    <textarea type="inspiration" class="form-control" id="inspiration-input" placeholder="Inspirations..." rows="2"></textarea>
-                    <textarea type="notes" class="form-control" id="notes-input" placeholder="Notes..." rows="4"></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-danger newLyrics">Create</button>
                 <div class="col-sm-3">
+                    <form class="newLyrics" id="newLyric">
+                        <div class="form-group">
+                            <label for="username">Create Song</label>
+                            </br>
+                            <input class="songTitle" type="text" placeholder="Song Title">
+                            <input class="genre" type="text" placeholder="Genre">
+                            <textarea type="lyric" class="form-control" id="lyric-input" placeholder="Lyrics..." rows="8"></textarea>
+                            <textarea type="inspiration" class="form-control" id="inspiration-input" placeholder="Inspirations..." rows="2"></textarea>
+                            <textarea type="notes" class="form-control" id="notes-input" placeholder="Notes..." rows="4"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-danger newLyrics">Create</button>
+                    </form>
+                </div>
+                
+
+                <div class="col-sm-9 ">
+                    <div class="row" id="lyricsBody">
+                        {{#each lyrics}}
+                            <div class='col-sm-3'>
+                                <div class='card bg-secondary'>
+                                    <div class='card-body'>
+                                    <h5 class='card-title'>
+                                        {{title}}
+                                    </h5>
+                                    <h6 class='card-subtitle'>
+                                        {{genre}}
+                                    </h6>
+                                    <p class='card-text'>
+                                        {{lyrics}}
+                                    </p>
+                                    <p class='card-text'>
+                                        {{inspiration}}
+                                    </p>
+                                    <p class='card-text'>
+                                        {{notes}}
+                                    </p>
+                                    </div>
+                                </div>
+                            </div>
+                        {{/each}} 
+                    </div>
                    
                 </div>
                
@@ -42,11 +72,8 @@
 
 Etiam vehicula a justo sed commodo. Phasellus erat lectus, laoreet nec egestas non, ultricies et magna. Sed mollis eleifend elit id tristique. Quisque ac nisi finibus velit malesuada faucibus. Praesent eget mi non lorem facilisis porta vel id dolor. Sed pharetra leo sit amet purus sollicitudin aliquet eget et nisi. Phasellus tincidunt magna sed eros tempus elementum. Suspendisse porta volutpat augue. Nullam molestie ex enim, ac condimentum orci finibus in. Cras eu massa sit amet urna mattis sollicitudin nec rhoncus massa. Vestibulum blandit neque at enim efficitur congue. Maecenas pretium at nulla a imperdiet. Cras tortor tellus, euismod in mauris eget, consectetur fermentum ligula. Mauris a libero efficitur, egestas justo vitae, imperdiet odio.
 
-Phasellus convallis in erat eget mollis. Morbi eget efficitur metus. Mauris consectetur sapien justo, in commodo ligula sollicitudin id. Phasellus rhoncus nisi eu venenatis convallis. In vel lacinia nulla, vitae bibendum mi. Fusce ullamcorper massa ac quam mattis interdum id sit amet diam. Phasellus tempus, arcu vitae euismod lacinia, mi purus ullamcorper nisi, sed venenatis nibh purus at diam. Aenean dignissim nisi id quam tincidunt mollis. Curabitur pulvinar turpis a sapien suscipit, et blandit enim elementum. Quisque sollicitudin tempus urna, ac pulvinar tellus pellentesque ut.
-
-Cras porttitor fermentum augue, nec convallis ipsum auctor in. Morbi in ex cursus, lacinia ex ac, semper leo. Aliquam auctor id nulla mattis viverra. Vivamus pulvinar a tortor sed porttitor. Donec et convallis orci. Morbi pretium massa ut nisi luctus, sed venenatis metus facilisis. Proin lobortis orci eu porta convallis. Nullam ac volutpat mauris. Nam id massa et nisi ultrices convallis in quis lacus. Donec gravida sed turpis sit amet mollis. Maecenas dapibus, magna a venenatis cursus, tortor quam dignissim felis, eget commodo purus neque a libero. Donec in porttitor sapien, ac iaculis purus. Mauris maximus odio auctor porttitor porta.
-
-Morbi elementum dui arcu, vitae ultrices justo interdum ac. Integer at ullamcorper eros. Nam magna dolor, blandit ut lectus quis, lacinia fermentum sem. Mauris facilisis gravida diam eget dapibus. Morbi et nunc consequat, porttitor nibh sed, scelerisque arcu. Pellentesque rhoncus, risus ac suscipit congue, erat nibh venenatis libero, ut varius enim ante vel metus. Sed ornare est ut nisi luctus, eu vehicula ante ornare. Duis non justo eget ante rutrum pretium at a ante. Sed consectetur lectus non aliquam lobortis. Sed suscipit in dui vitae rutrum. Sed eu velit at sem efficitur dignissim.</p>
+Phasellus convallis in erat eget mollis.
+                    </p>
                 </div>
             </div>
             
