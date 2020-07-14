@@ -1,0 +1,95 @@
+{{!-- Navigation bar --}}
+<nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            
+            <span class="navbar-text" id="SL"><i class="fas fa-music pr-1"></i>Songwriter's Lament</span>
+
+            
+
+          </div>
+          <a class="navbar-brand float-right text-dark" id="SL" href="/logout">Logout</a>
+        </div>
+</nav>
+
+{{!-- Main Body --}}
+<div class="container-fluid">
+    <div class="row">
+        
+        <div class="col-sm-8">
+            
+            <div class="row">
+                <!-- Testing-->
+                <span class="songs-container"></span>
+                <!-- Testing -->
+                <div class="col-sm-3">
+                    <form class="newLyrics" id="newLyric">
+                        <div class="form-group">
+                            <label for="username" id="SL">Create Song</label>
+                            </br>
+                            <input class="songTitle" type="text" placeholder="Song Title">
+                            <input class="genre" type="text" placeholder="Genre">
+                            <textarea type="lyric" class="form-control" id="lyric-input" placeholder="Lyrics..." rows="8"></textarea>
+                            <textarea type="inspiration" class="form-control" id="inspiration-input" placeholder="Inspirations..." rows="2"></textarea>
+                            <textarea type="notes" class="form-control" id="notes-input" placeholder="Notes..." rows="4"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-danger newLyrics">Create</button>
+                    </form>
+                </div>
+                
+
+                <div class="col-sm-9 ">
+                    <div class="row" id="lyricsBody">
+                        {{#each lyrics}}
+                            <div class='col-sm-3'>
+                                <div class='card bg-secondary'>
+                                    <div class='card-body'>
+                                    <h5 class='card-title'>
+                                        {{title}}
+                                    </h5>
+                                    <h6 class='card-subtitle'>
+                                        {{genre}}
+                                    </h6>
+                                    <p class='card-text'>
+                                        {{lyrics}}
+                                    </p>
+                                    <p class='card-text'>
+                                        {{inspiration}}
+                                    </p>
+                                    <p class='card-text'>
+                                        {{notes}}
+                                    </p>
+                                    </div>
+                                </div>
+                            </div>
+                        {{/each}} 
+                    </div>
+                   
+                </div>
+               
+            </div>
+        </div>
+
+        
+
+        <div class="col-sm-4">
+            <div class="card bg-primary">
+                <div class="card-body">
+                    <p class="card-text">This is some text within a card body.
+                     
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nec dolor mollis, dignissim diam et, iaculis nibh. Pellentesque et cursus ante. Proin quis interdum magna. Nam ultricies sit amet nibh quis viverra. In commodo dolor at tincidunt maximus. Sed consectetur erat a neque placerat, non venenatis sapien maximus. Proin scelerisque sem id lacus finibus, sit amet vulputate urna pulvinar. Vestibulum ut orci pretium nulla commodo varius. Phasellus eget semper orci. Phasellus arcu arcu, porta vitae efficitur a, fringilla id lectus. Proin tincidunt, libero vitae blandit elementum, nisl odio aliquet tellus, eu vulputate nisi arcu eget lacus. Quisque ullamcorper eu ex eget blandit.
+
+Etiam vehicula a justo sed commodo. Phasellus erat lectus, laoreet nec egestas non, ultricies et magna. Sed mollis eleifend elit id tristique. Quisque ac nisi finibus velit malesuada faucibus. Praesent eget mi non lorem facilisis porta vel id dolor. Sed pharetra leo sit amet purus sollicitudin aliquet eget et nisi. Phasellus tincidunt magna sed eros tempus elementum. Suspendisse porta volutpat augue. Nullam molestie ex enim, ac condimentum orci finibus in. Cras eu massa sit amet urna mattis sollicitudin nec rhoncus massa. Vestibulum blandit neque at enim efficitur congue. Maecenas pretium at nulla a imperdiet. Cras tortor tellus, euismod in mauris eget, consectetur fermentum ligula. Mauris a libero efficitur, egestas justo vitae, imperdiet odio.
+
+Phasellus convallis in erat eget mollis.
+                    </p>
+                </div>
+            </div>
+            
+
+        </div>
+
+    </div>
+
+
+</div>

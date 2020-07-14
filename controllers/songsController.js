@@ -55,12 +55,62 @@ module.exports = function(app) {
       // The user is not logged in, send back an empty object
       res.json({});
     } else {
-      // Otherwise send back the user's email and id
+      // Otherwise send back the user's name and id
       // Sending back a password, even a hashed password, isn't a good idea
       res.json({
-        artistName: req.user.name,
+        artistName: req.user.artistName,
         id: req.user.id
       });
+      console.log(req.user);
+      console.log(req.user.id);
+      console.log(req.user.artistName);
     }
   });
+
+  // getting lyrics
+  app.get("/api/lyrics/:id", (req, res) => {
+    db.Song.findAll({
+      where: {
+        ArtistId: req.params.id
+      }
+    })
+      .then(dbSong => {
+        console.log(dbSong);
+        res.json(dbSong);
+      })
+      .catch(err => {
+        res.status(401).json(err);
+      });
+  });
+
+  // create new Lyrics
+  app.post("/api/lyrics", (req, res) => {
+    console.log(req.body[0]);
+    db.Song.create({
+      title: req.body.title,
+      genre: req.body.genre,
+      lyrics: req.body.lyrics,
+      inspiration: req.body.inspiration,
+      notes: req.body.notes,
+      ArtistId: req.body.ArtistId
+    })
+      .then(dbSong => {
+        res.json(dbSong);
+      })
+      .catch(err => {
+        res.status(401).json(err);
+      });
+  });
+
+  // Search for songs from a specific artist then provides JSON
+  // app.post("/api/:id?", (req, res) => {
+  //   db.Song.findAll({
+  //     where: {
+  //       artistID: req.params.id
+  //     }
+  //   }).then(songs => {
+  //     console.log("post", songs);
+  //     return res.json(songs);
+  //   });
+  // });
 };
