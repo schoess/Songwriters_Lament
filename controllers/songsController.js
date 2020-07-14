@@ -67,14 +67,14 @@ module.exports = function(app) {
     }
   });
 
-  // Search for Specific Artist then provides JSON
+  // Search for songs from a specific artist then provides JSON
   app.post("/api/:id?", (req, res) => {
     db.Song.findAll({
       where: {
         artistID: req.params.id
       }
     }).then(songs => {
-      console.log(songs);
+      console.log("post", songs);
       return res.json(songs);
     });
   });
