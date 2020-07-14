@@ -78,4 +78,38 @@ module.exports = function(app) {
       return res.json(songs);
     });
   });
+  // getting lyrics
+  app.get("/api/lyrics/:id", (req, res) => {
+    db.Song.findAll({
+      where: {
+        ArtistId: req.params.id
+      }
+    })
+      .then(dbSong => {
+        console.log(dbSong);
+        res.json(dbSong);
+      })
+      .catch(err => {
+        res.status(401).json(err);
+      });
+  });
+
+  // create new Lyrics
+  app.post("/api/lyrics", (req, res) => {
+    console.log(req.body[0]);
+    db.Song.create({
+      title: req.body.title,
+      genre: req.body.genre,
+      lyrics: req.body.lyrics,
+      inspiration: req.body.inspiration,
+      notes: req.body.notes,
+      ArtistId: req.body.ArtistId
+    })
+      .then(dbSong => {
+        res.json(dbSong);
+      })
+      .catch(err => {
+        res.status(401).json(err);
+      });
+  });
 };
