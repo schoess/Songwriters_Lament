@@ -10,6 +10,7 @@ module.exports = function(sequelize, DataTypes) {
     genre: {
       type: DataTypes.STRING,
       allowNull: false,
+      unique: false,
       validate: {
         notEmpty: true
       }
@@ -17,6 +18,7 @@ module.exports = function(sequelize, DataTypes) {
     inspiration: {
       type: DataTypes.STRING,
       allowNull: false,
+      unique: false,
       validate: {
         notEmpty: true
       }
@@ -24,6 +26,7 @@ module.exports = function(sequelize, DataTypes) {
     notes: {
       type: DataTypes.STRING,
       allowNull: false,
+      unique: false,
       validate: {
         notEmpty: true
       }
@@ -31,6 +34,7 @@ module.exports = function(sequelize, DataTypes) {
     lyrics: {
       type: DataTypes.STRING,
       allowNull: false,
+      unique: false,
       validate: {
         notEmpty: true
       }

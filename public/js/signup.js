@@ -40,4 +40,9 @@ $(document).ready(() => {
     $("#alert .msg").text(err.responseJSON);
     $("#alert").fadeIn(500);
   }
+  // User clicks register button; transfer control to register page
+  function redirectToLogin() {
+    window.location.href = "/login";
+  }
+  $("#loginButton").on("click", redirectToLogin);
 });

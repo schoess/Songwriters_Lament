@@ -67,6 +67,17 @@ module.exports = function(app) {
     }
   });
 
+  // Search for songs from a specific artist then provides JSON
+  app.post("/api/:id?", (req, res) => {
+    db.Song.findAll({
+      where: {
+        artistID: req.params.id
+      }
+    }).then(songs => {
+      console.log("post", songs);
+      return res.json(songs);
+    });
+  });
   // getting lyrics
   app.get("/api/lyrics/:id", (req, res) => {
     db.Song.findAll({
@@ -101,16 +112,4 @@ module.exports = function(app) {
         res.status(401).json(err);
       });
   });
-
-  // Search for songs from a specific artist then provides JSON
-  // app.post("/api/:id?", (req, res) => {
-  //   db.Song.findAll({
-  //     where: {
-  //       artistID: req.params.id
-  //     }
-  //   }).then(songs => {
-  //     console.log("post", songs);
-  //     return res.json(songs);
-  //   });
-  // });
 };
