@@ -1,6 +1,15 @@
 {{!-- Navigation bar --}}
-<nav class="navbar navbar-light bg-success">
-    <a class="navbar-brand" id="title" href="#">Songwriter's Lament</a>
+<nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            
+            <span class="navbar-text" id="SL"><i class="fas fa-music pr-1"></i>Songwriter's Lament</span>
+
+            
+
+          </div>
+          <a class="navbar-brand float-right text-dark" id="SL" href="/logout">Logout</a>
+        </div>
 </nav>
 
 {{!-- Main Body --}}
@@ -16,7 +25,7 @@
                 <div class="col-sm-3">
                     <form class="newLyrics" id="newLyric">
                         <div class="form-group">
-                            <label for="username">Create Song</label>
+                            <label for="username" id="SL">Create Song</label>
                             </br>
                             <input class="songTitle" type="text" placeholder="Song Title">
                             <input class="genre" type="text" placeholder="Genre">
