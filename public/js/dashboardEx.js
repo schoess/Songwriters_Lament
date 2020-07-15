@@ -8,7 +8,7 @@ $(() => {
   // variable that will keep track of which updated song (by id) the user selected.
   let idUpdate;
 
-  // Requests
+  // AJAX Requests
   // ==============================
   // GET request for Lyrics
   const getLyrics = () => {
@@ -215,7 +215,8 @@ $(() => {
       });
   });
 
-  // DELETE lyrics
+  // Create click events when putting elements to the DOM (dynamically in renderLyricList();)
+  // For DELETE
   function handleDeleteClick(lyric, selector) {
     selector.on("click", e => {
       e.preventDefault();
@@ -240,17 +241,17 @@ $(() => {
     });
   }
 
-  // create click events when putting elements to the DOM
-  // click event for updating!
+  // Create click events when putting elements to the DOM (dynamically in renderLyricList();)
+  // For UPDATE
   function handleCardClick(lyric, selector) {
     selector.on("click", e => {
       e.preventDefault();
       console.log(lyric);
-      // hides the create form and shows the update form
+      // Hides the create form and shows the update form
       $(".newLyrics").addClass("d-none");
       $(".updateLyric").removeClass("d-none");
 
-      // getting the values to edit and update
+      // Getting the values to edit and update
       $(".updateLyric")
         .children()
         .children(".songTitle")
@@ -271,12 +272,12 @@ $(() => {
         .children()
         .children("#notes-input")
         .val(lyric.notes);
-      // using our data id (idUpdate) to know which song was selected
+      // Using our data id (idUpdate) to know which song was selected
       idUpdate = lyric.id;
     });
   }
 
-  // after everything is initialized, get user_data then use it to get the artists song lyrics
+  // After everything is initialized, get user_data then use it to get the artists song lyrics
   getUserData().then(result => {
     userData.push(result);
     getAndRenderLyrics();
