@@ -118,6 +118,7 @@ $(() => {
       .children("#notes-input")
       .val("");
   };
+
   // Get the values from our text boxes.
   const createLyricObj = selector => {
     // getting the lyrics and putting them in variable.
