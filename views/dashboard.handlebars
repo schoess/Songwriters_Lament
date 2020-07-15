@@ -16,7 +16,7 @@
 <div class="container-fluid">
     <div class="row">
         
-        <div class="col-sm-8">
+        <div class="col-sm-12">
             
             <div class="row">
                 <!-- Testing-->
@@ -34,6 +34,21 @@
                             <textarea type="notes" class="form-control" id="notes-input" placeholder="Notes..." rows="4"></textarea>
                         </div>
                         <button type="submit" class="btn btn-danger newLyrics">Create</button>
+                        
+                    </form>
+
+                    <form class="updateLyric d-none" id="updateLyric">
+                        <div class="form-group">
+                            <label for="username" id="SL">Update Song</label>
+                            </br>
+                            <input class="songTitle" type="text" placeholder="Song Title">
+                            <input class="genre" type="text" placeholder="Genre">
+                            <textarea type="lyric" class="form-control" id="lyric-input" placeholder="Lyrics..." rows="8"></textarea>
+                            <textarea type="inspiration" class="form-control" id="inspiration-input" placeholder="Inspirations..." rows="2"></textarea>
+                            <textarea type="notes" class="form-control" id="notes-input" placeholder="Notes..." rows="4"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-danger updateLyrics">Update</button>
+                        
                     </form>
                 </div>
                 
@@ -70,26 +85,10 @@
             </div>
         </div>
 
-        
-
-        <div class="col-sm-4">
-            <div class="card bg-primary">
-                <div class="card-body">
-                    <p class="card-text">This is some text within a card body.
-                     
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nec dolor mollis, dignissim diam et, iaculis nibh. Pellentesque et cursus ante. Proin quis interdum magna. Nam ultricies sit amet nibh quis viverra. In commodo dolor at tincidunt maximus. Sed consectetur erat a neque placerat, non venenatis sapien maximus. Proin scelerisque sem id lacus finibus, sit amet vulputate urna pulvinar. Vestibulum ut orci pretium nulla commodo varius. Phasellus eget semper orci. Phasellus arcu arcu, porta vitae efficitur a, fringilla id lectus. Proin tincidunt, libero vitae blandit elementum, nisl odio aliquet tellus, eu vulputate nisi arcu eget lacus. Quisque ullamcorper eu ex eget blandit.
-
-Etiam vehicula a justo sed commodo. Phasellus erat lectus, laoreet nec egestas non, ultricies et magna. Sed mollis eleifend elit id tristique. Quisque ac nisi finibus velit malesuada faucibus. Praesent eget mi non lorem facilisis porta vel id dolor. Sed pharetra leo sit amet purus sollicitudin aliquet eget et nisi. Phasellus tincidunt magna sed eros tempus elementum. Suspendisse porta volutpat augue. Nullam molestie ex enim, ac condimentum orci finibus in. Cras eu massa sit amet urna mattis sollicitudin nec rhoncus massa. Vestibulum blandit neque at enim efficitur congue. Maecenas pretium at nulla a imperdiet. Cras tortor tellus, euismod in mauris eget, consectetur fermentum ligula. Mauris a libero efficitur, egestas justo vitae, imperdiet odio.
-
-Phasellus convallis in erat eget mollis.
-                    </p>
-                </div>
-            </div>
-            
-
         </div>
 
     </div>
 
 
 </div>
+    <script type="text/javascript" src="/js/dashboardEx.js"></script>

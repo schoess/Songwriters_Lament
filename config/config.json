@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "Orange1!",
+    "password": "amillionwords",
     "database": "songs_db",
     "port": 3306,
     "host": "localhost",
