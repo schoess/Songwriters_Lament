@@ -10,7 +10,7 @@ $(() => {
 
   // Requests
   // ==============================
-  // GET request
+  // GET request for Lyrics
   const getLyrics = () => {
     // we need the artist's id.
     const id = userData[0].id;
@@ -21,7 +21,7 @@ $(() => {
       method: "GET"
     });
   };
-  // USER GET request
+  // GET request for User
   const getUserData = () => {
     return $.ajax({
       url: "/api/user_data",
@@ -220,6 +220,7 @@ $(() => {
     selector.on("click", e => {
       e.preventDefault();
       console.log("deleting works");
+      // make DELETE request
       deleteLyrics(lyric.id)
         .then(() => {
           console.log("success!");
