@@ -78,6 +78,7 @@ module.exports = function(app) {
   //     return res.json(songs);
   //   });
   // });
+
   // getting lyrics
   app.get("/api/lyrics/:id", (req, res) => {
     db.Song.findAll({
@@ -110,5 +111,26 @@ module.exports = function(app) {
       .catch(err => {
         res.status(401).json(err);
       });
+  });
+  // update
+  app.put("/api/lyrics/:id", (req, res) => {
+    // Update takes in an object describing the properties we want to update, and
+    // we use where to describe which objects we want to update
+    db.Song.update(
+      {
+        title: req.body.title,
+        genre: req.body.genre,
+        lyrics: req.body.lyrics,
+        inspiration: req.body.inspiration,
+        notes: req.body.notes
+      },
+      {
+        where: {
+          id: req.params.id
+        }
+      }
+    ).then(dbSong => {
+      res.json(dbSong);
+    });
   });
 };

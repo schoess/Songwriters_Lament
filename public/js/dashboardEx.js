@@ -23,20 +23,6 @@
 // }
 
 $(() => {
-  // I FORGOT HOW TO DO CLICK EVENTS SO IM DOING THIS
-  // Testing click events
-  $(".card").click(function(event) {
-    event.preventDefault();
-    // logs id of card.
-    console.log($(this).attr("id"));
-    // text info inside card
-    console.log(
-      $(this)
-        .text()
-        .trim()
-    );
-  });
-
   // // CREATE input elements for the page.
   // const createInputLyrics = () => {
   //   const formClass = $("<form class='newLyrics' id='newLyric'>");
@@ -74,6 +60,7 @@ $(() => {
   };
   // saving user data.
   const userData = [];
+  let idUpdate;
 
   //Taking from note taker app
   // GET request
@@ -85,6 +72,15 @@ $(() => {
     return $.ajax({
       url: "/api/lyrics/" + id.toString(),
       method: "GET"
+    });
+  };
+
+  // PUT request
+  const updateLyrics = (id, data) => {
+    return $.ajax({
+      url: "/api/lyrics/" + id.toString(),
+      method: "PUT",
+      data: data
     });
   };
 
@@ -113,6 +109,8 @@ $(() => {
       divCardLyrics.text(lyric.lyrics);
       divCardInsp.text(lyric.inspiration);
       divCardNotes.text(lyric.notes);
+      // adding id to the div column
+      divCardBg.attr("data-value", lyric.id);
 
       // append in order, then append to the row where our lyrics boxes will  be displayed "#lyricsBody"
       divCardBody.append(divCardSongTitle);
@@ -124,10 +122,66 @@ $(() => {
       divCardBg.append(divCardBody);
       divColSm.append(divCardBg);
       $("#lyricsBody").append(divColSm);
+      // handling click event
+      handleCardClick(lyric, divCardBg);
     });
   };
 
-  // the method to render lyics lyrics
+  // click event for updating!
+  function handleCardClick(lyric, selector) {
+    selector.on("click", e => {
+      e.preventDefault();
+      console.log(lyric);
+      $(".newLyrics").addClass("d-none");
+      $(".updateLyric").removeClass("d-none");
+
+      $(".updateLyric").children().children(".songTitle").val(lyric.title);
+      $(".updateLyric").children().children(".genre").val(lyric.genre);
+      $(".updateLyric").children().children("#lyric-input").val(lyric.lyrics);
+      $(".updateLyric").children().children("#inspiration-input").val(lyric.inspiration);
+      $(".updateLyric").children().children("#notes-input").val(lyric.notes);
+      idUpdate = lyric.id;
+    });
+  }
+
+  // function to clear fields
+  const clearForm = selector => {
+    selector.children().children(".songTitle").val("");
+    selector.children().children(".genre").val("");
+    selector.children().children("#lyric-input").val("");
+    selector.children().children("#inspiration-input").val("");
+    selector.children().children("#notes-input").val("");
+  };
+  // function to get values from our text boxes
+  const createLyricObj = selector => {
+    // getting the lyrics and putting them in variable
+    const songTitle = selector.children().children(".songTitle")
+      .val()
+      .trim();
+    const genreText = selector.children().children(".genre")
+      .val()
+      .trim();
+    const lyricsText = selector.children().children("#lyric-input")
+      .val()
+      .trim();
+    const inspirationText = selector.children().children("#inspiration-input")
+      .val()
+      .trim();
+    const noteText = selector.children().children("#notes-input")
+      .val()
+      .trim();
+
+    songObj = {
+      title: songTitle,
+      genre: genreText,
+      lyrics: lyricsText,
+      inspiration: inspirationText,
+      notes: noteText,
+      ArtistId: userData[0].id
+    };
+    return songObj;
+  };
+  // the function to render lyics lyrics
   const getAndRenderLyrics = () => {
     return getLyrics().then(renderLyricList);
   };
@@ -139,35 +193,10 @@ $(() => {
   // for new lyrics, getting and creating it
   $("#newLyric").submit(event => {
     event.preventDefault();
-
-    // getting the lyrics and putting them in variable
-    const songTitle = $(".songTitle")
-      .val()
-      .trim();
-    const genreText = $(".genre")
-      .val()
-      .trim();
-    const lyricsText = $("#lyric-input")
-      .val()
-      .trim();
-    const inspirationText = $("#inspiration-input")
-      .val()
-      .trim();
-    const noteText = $("#notes-input")
-      .val()
-      .trim();
-
     // Storing it to the database
     //
     // First, storing it to an object
-    const dataSong = {
-      title: songTitle,
-      genre: genreText,
-      lyrics: lyricsText,
-      inspiration: inspirationText,
-      notes: noteText,
-      ArtistId: userData[0].id
-    };
+    const dataSong = createLyricObj($("#newLyric"));
 
     // make POST request
     $.post("/api/lyrics", dataSong)
@@ -175,17 +204,45 @@ $(() => {
         console.log("success!");
         // location.reload();
         // reset the input values
-        $(".songTitle").val("");
-        $(".genre").val("");
-        $("#lyric-input").val("");
-        $("#inspiration-input").val("");
-        $("#notes-input").val("");
+        clearForm($("newLyric"));
         getAndRenderLyrics();
       })
       .catch(err => {
         console.log(err);
       });
   });
+
+  // update lyrics
+  $("#updateLyric").submit(event => {
+    event.preventDefault();
+    // Storing it to the database
+    //
+    // First, storing it to an object
+    const dataSong = createLyricObj($("#updateLyric"));
+
+    // make POST request
+    updateLyrics(idUpdate, dataSong)
+      .then(() => {
+        console.log("success!");
+        // location.reload();
+        // reset the input values
+        clearForm($("#newLyric"));
+        getAndRenderLyrics();
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  });
+
+  // I FORGOT HOW TO DO CLICK EVENTS SO IM DOING THIS
+  // Testing click events
+  // $(".card").click(event => {
+  //   event.preventDefault();
+  //   // logs id of card.
+  //   console.log("it works");
+  //   const id = $(this);
+  //   console.log(id);
+  // });
 
   // CREATING ELEMENTS
   // arrow function notation for the event.
