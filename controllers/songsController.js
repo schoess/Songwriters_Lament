@@ -133,4 +133,17 @@ module.exports = function(app) {
       res.json(dbSong);
     });
   });
+
+  // delete
+  app.delete("/api/lyrics/:id", (req, res) => {
+    // Update takes in an object describing the properties we want to update, and
+    // we use where to describe which objects we want to update
+    db.Song.destroy({
+      where: {
+        id: req.params.id
+      }
+    }).then(dbSong => {
+      res.json(dbSong);
+    });
+  });
 };
