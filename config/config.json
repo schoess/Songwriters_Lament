@@ -1,7 +1,11 @@
 {
   "development": {
     "username": "root",
+<<<<<<< HEAD
     "password": "22087005552493",
+=======
+    "password": "amillionwords",
+>>>>>>> a92c10365b31b94997357971c43912d2ff202493
     "database": "songs_db",
     "port": 3306,
     "host": "localhost",
