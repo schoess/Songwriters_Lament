@@ -3,7 +3,6 @@ module.exports = function(sequelize, DataTypes) {
     title: {
       type: DataTypes.STRING,
       allowNull: false,
-      unique: true,
       validate: {
         notEmpty: true
       }
@@ -11,7 +10,7 @@ module.exports = function(sequelize, DataTypes) {
     genre: {
       type: DataTypes.STRING,
       allowNull: false,
-      unique: true,
+      unique: false,
       validate: {
         notEmpty: true
       }
@@ -19,7 +18,7 @@ module.exports = function(sequelize, DataTypes) {
     inspiration: {
       type: DataTypes.STRING,
       allowNull: false,
-      unique: true,
+      unique: false,
       validate: {
         notEmpty: true
       }
@@ -27,7 +26,7 @@ module.exports = function(sequelize, DataTypes) {
     notes: {
       type: DataTypes.STRING,
       allowNull: false,
-      unique: true,
+      unique: false,
       validate: {
         notEmpty: true
       }
@@ -35,19 +34,20 @@ module.exports = function(sequelize, DataTypes) {
     lyrics: {
       type: DataTypes.STRING,
       allowNull: false,
-      unique: true,
+      unique: false,
       validate: {
         notEmpty: true
       }
-    },
-    artistID: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: "artists",
-        key: "id"
-      }
     }
   });
+
+  Song.associate = function(models) {
+    models.Song.belongsTo(models.Artist, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
+  };
 
   return Song;
 };
