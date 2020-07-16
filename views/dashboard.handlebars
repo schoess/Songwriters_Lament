@@ -50,7 +50,7 @@
                     <div class="row" id="lyricsBody">
                         {{#each lyrics}}
                             <div class='col-sm-3'>
-                                <div class='card bg-secondary'>
+                                <div class='card'>
                                     <div class='card-body'>
                                     <h5 class='card-title'>
                                         {{title}}
@@ -82,17 +82,17 @@
     <div class = "container-fluid">
         <div class="row api-row">
             <div class="api-song col-sm-4">
-                <label for="search" id="SL">Search</label>
+                <label for="search" id="SL">Is Your Artist Name Unique?</label>
                 <br>
                 <input class = "api-search" type = "text" placeholder="Search...">
                 <br>
                 <button type = "submit" class = "btn btn-danger api-button">Search</button>
             </div>
-            <div class="api-results col-sm-8">
-                <p class="results"> 
-                    Artist:
-                </p>
-
+            <div class="api-results col-sm-3">
+                <div>
+                    <h3 class="results"></h3>
+                    <h3 class="notoriginallol"></h3>
+                </div>
             </div>
         </div>
         

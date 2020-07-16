@@ -1,3 +1,5 @@
+//Enviromental Vars
+// const env = require("dotenv").config();
 // Requiring necessary npm packages
 const express = require("express");
 const session = require("express-session");
@@ -7,8 +9,6 @@ const passport = require("./config/passport");
 const exphbs = require("express-handlebars");
 // Using path
 const path = require("path");
-
-const cors = require("cors");
 
 // Setting up port and requiring models for syncing
 const PORT = process.env.PORT || 8080;

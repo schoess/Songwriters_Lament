@@ -35,7 +35,7 @@ module.exports = function(app) {
     res.render("dashboard");
   });
 
-  app.get("/products/:id", cors(), (req, res) => {
-    res.json({ msg: "This is CORS-enabled for a Single Route" });
-  });
+  // app.get("/products/:id", cors(), (req, res) => {
+  //   res.json({ msg: "This is CORS-enabled for a Single Route" });
+  // });
 };

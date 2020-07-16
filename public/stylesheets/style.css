@@ -68,10 +68,31 @@ footer {
   margin-top: 1%;
   width: 100%;
   font-family: 'Lobster', cursive;
+  position: absolute;
+  bottom: 0%;
 }
 
 .yes {
   border: 2px solid black;
   border-radius: 10px;
   box-shadow: 4px 8px 4px rgba(0, 0, 0, 0.25);
+}
+
+.results {
+  background-color: lightgreen;
+  color: black;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.notoriginallol {
+  background-color: red;
+  color: black;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.card-body {
+  background-color: white;
+  margin-top: 0.05%;
 }
