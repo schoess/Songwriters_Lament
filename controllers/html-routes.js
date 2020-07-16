@@ -34,4 +34,8 @@ module.exports = function(app) {
   app.get("/members", isAuthenticated, (req, res) => {
     res.render("dashboard");
   });
+
+  app.get("/products/:id", cors(), (req, res) => {
+    res.json({ msg: "This is CORS-enabled for a Single Route" });
+  });
 };
