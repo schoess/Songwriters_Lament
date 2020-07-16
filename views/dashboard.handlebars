@@ -14,28 +14,19 @@
 
 {{!-- Main Body --}}
 <div class="container-fluid">
-    <div class="row">
-        
-        <div class="col-sm-12">
-            
             <div class="row">
-                <!-- Testing-->
-                <span class="songs-container"></span>
-                <!-- Testing -->
-                <div class="col-sm-3">
+                <div class="col-sm-4">
                     <form class="newLyrics" id="newLyric">
                         <div class="form-group">
                             <label for="username" id="SL">Create Song</label>
                             </br>
                             <input class="songTitle" type="text" placeholder="Song Title">
-                            <input class="artistNameChecker" id="artistNameChecker" type="text" placeholder="Is your artist name taken?">
-                            <button type="submit" id="nameCheckBtn" class="btn btn-danger">Check!</button>
                             <input class="genre" type="text" placeholder="Genre">
                             <textarea type="lyric" class="form-control" id="lyric-input" placeholder="Lyrics..." rows="8"></textarea>
                             <textarea type="inspiration" class="form-control" id="inspiration-input" placeholder="Inspirations..." rows="2"></textarea>
                             <textarea type="notes" class="form-control" id="notes-input" placeholder="Notes..." rows="4"></textarea>
                         </div>
-                        <button type="submit" class="btn btn-danger newLyrics">Create</button>
+                        <button type="submit" class="btn btn-danger createLyrics">Create</button>
                         
                     </form>
 
@@ -55,7 +46,7 @@
                 </div>
                 
 
-                <div class="col-sm-9 ">
+                <div class="col-sm-8 yes"> <!--yes is to get an idea of where the saved songs will be rendered too-->
                     <div class="row" id="lyricsBody">
                         {{#each lyrics}}
                             <div class='col-sm-3'>
@@ -87,11 +78,37 @@
             </div>
         </div>
 
+        
+    <div class = "container-fluid">
+        <div class="row api-row">
+            <div class="api-song col-sm-4">
+                <label for="search" id="SL">Search</label>
+                <br>
+                <input class = "api-search" type = "text" placeholder="Search...">
+                <br>
+                <button type = "submit" class = "btn btn-danger api-button">Search</button>
+            </div>
+            <div class="api-results col-sm-8">
+                <p class="results"> 
+                    Artist:
+                </p>
+
+            </div>
+        </div>
+        
+    </div>        
+
         </div>
 
     </div>
 
 
+</div>
+
+<div>
+    <footer>
+        Songwriter's Lament
+    </footer>
 </div>
     <script type="text/javascript" src="/js/dashboardEx.js"></script>
     <script type="text/javascript" src="/js/artistNameChecker.js"></script>

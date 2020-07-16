@@ -3,7 +3,7 @@ function buildQueryURL() {
   const queryParams = "5d656564694f534d656564";
   const queryMidURL = "/searchtrack.php?s=";
 
-  nameOfArtist = $("#artistNameChecker")
+  nameOfArtist = $(".api-search")
     .val()
     .trim();
 
@@ -13,7 +13,7 @@ function buildQueryURL() {
 
 // Clears the name of the artist that the user typed into the input box
 function clear() {
-  $("#artistNameChecker").empty();
+  $(".api-search").empty();
 }
 
 // Updates page to display whether the artist name exists or not
@@ -23,7 +23,7 @@ function updatePage(artistData) {
 }
 
 // Event listener on the check button to grab the name that was input and put a call out to the API to see if it matches any results
-$("#nameCheckBtn").on("click", event => {
+$(".api-button").on("click", event => {
   event.preventDefault();
   // Build the query URL for the ajax request
   const queryURL = buildQueryURL();
