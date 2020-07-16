@@ -33,7 +33,7 @@ a {
   color: black;
 }
 
-.newLyrics{
+.newLyrics, .updateLyric{
   margin-top: 20px;
   padding: 15px;
   border: 2px solid black;
@@ -92,7 +92,18 @@ footer {
   text-align: center;
 }
 
+.card {
+  background-color: white;
+  border-radius: 5px;
+  border: 2px solid black;
+  margin-top: 7%;
+}
+
 .card-body {
   background-color: white;
-  margin-top: 0.05%;
+  border-radius: 5px;
+}
+
+.bodyLyric {
+  margin-top: 1%;
 }
