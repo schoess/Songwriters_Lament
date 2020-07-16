@@ -14,15 +14,8 @@
 
 {{!-- Main Body --}}
 <div class="container-fluid">
-    <div class="row">
-        
-        <div class="col-sm-12">
-            
             <div class="row">
-                <!-- Testing-->
-                <span class="songs-container"></span>
-                <!-- Testing -->
-                <div class="col-sm-3">
+                <div class="col-sm-4">
                     <form class="newLyrics" id="newLyric">
                         <div class="form-group">
                             <label for="username" id="SL">Create Song</label>
@@ -33,7 +26,7 @@
                             <textarea type="inspiration" class="form-control" id="inspiration-input" placeholder="Inspirations..." rows="2"></textarea>
                             <textarea type="notes" class="form-control" id="notes-input" placeholder="Notes..." rows="4"></textarea>
                         </div>
-                        <button type="submit" class="btn btn-danger newLyrics">Create</button>
+                        <button type="submit" class="btn btn-danger createLyrics">Create</button>
                         
                     </form>
 
@@ -53,7 +46,7 @@
                 </div>
                 
 
-                <div class="col-sm-9 ">
+                <div class="col-sm-8 yes"> <!--yes is to get an idea of where the saved songs will be rendered too-->
                     <div class="row" id="lyricsBody">
                         {{#each lyrics}}
                             <div class='col-sm-3'>
@@ -85,10 +78,50 @@
             </div>
         </div>
 
+        
+    <div class = "container-fluid">
+        <div class="row api-row">
+            <div class="api-song col-sm-4">
+                <label for="search" id="SL">Search</label>
+                <br>
+                <input class = "api-search" type = "text" placeholder="Search...">
+                <br>
+                <button type = "submit" class = "btn btn-danger api-button">Search</button>
+            </div>
+            <div class="api-results col-sm-8">
+                <p class="results"> 
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae deserunt inventore cum recusandae obcaecati nam
+                    placeat eveniet debitis blanditiis nostrum. Saepe atque illo sed, excepturi iusto vitae incidunt consequuntur numquam quaerat. 
+                    Laborum cupiditate mollitia voluptatem sunt possimus harum. Totam dolorum laborum, rem, quis id suscipit ipsam facilis ut qui nostrum impedit.
+                    Nesciunt repudiandae libero, sed, quae culpa beatae in fugit, iusto ab odio minus? Omnis minima aut consectetur eum nesciunt ea asperiores neque,
+                    cupiditate dolores provident cumque eius quis ullam impedit adipisci dicta dolorem. Vel sapiente enim voluptates rerum, repellendus id maiores natus, 
+                    dolore consequuntur tempore recusandae dolorum ratione quidem tenetur quaerat sunt hic asperiores? Neque, dolores laborum. Facilis numquam, ut tempore
+                    at optio quae libero atque id, porro illum nisi accusamus reiciendis repellendus laudantium sint non eum a omnis! Totam asperiores ipsa sunt ipsam inventore
+                    molestiae at quos, tenetur aliquid error ut aperiam possimus est impedit unde, repellendus deleniti nemo reprehenderit iste quam eos sed! Similique,
+                    fuga voluptatibus! Eum quod atque sunt rerum libero! Vero, quisquam earum. Commodi nemo ex quibusdam doloremque. Odit omnis rerum cumque dolores tenetur,
+                    recusandae ea non atque earum officiis nemo est, provident id veritatis placeat, sapiente tempore? Sit rem atque autem maiores excepturi ut inventore
+                    eaque at tempore, mollitia dolores asperiores deserunt harum porro ipsa nesciunt commodi quisquam pariatur? Sunt aliquam assumenda odit deleniti 
+                    commodi explicabo iusto? Quod tenetur a, iusto doloribus dolor fuga harum, dolore hic voluptas corporis magnam exercitationem quidem adipisci quisquam 
+                    optio natus accusantium! Architecto minima eos dolor. Laudantium beatae inventore, eos ea optio temporibus, odio ipsam maxime sit molestias impedit 
+                    quibusdam autem quaerat sequi nisi ducimus praesentium architecto accusamus? Nisi dolorem debitis eveniet dicta quasi. Explicabo voluptates, officiis 
+                    quasi sint, voluptate fugit repellendus autem dicta ad eius fugiat aut esse consequatur atque quia corporis modi. Officiis ad nisi dicta consectetur.
+                </p>
+
+            </div>
+        </div>
+        
+    </div>        
+
         </div>
 
     </div>
 
 
+</div>
+
+<div>
+    <footer>
+        Songwriter's Lament
+    </footer>
 </div>
     <script type="text/javascript" src="/js/dashboardEx.js"></script>
