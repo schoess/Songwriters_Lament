@@ -1,6 +1,8 @@
 # Songwriter's Lament
   > Songwriter's Lament is a web app to help you as a user create and remember songs/song ideas. 
   
+  ![Capture](https://user-images.githubusercontent.com/60049799/87736623-42575000-c79e-11ea-82d9-5b3726d0d57f.PNG)
+  
   ## See it here!: https://project-2-schoess.herokuapp.com/
   
   [![NPM Version][npm-image]][npm-url]
